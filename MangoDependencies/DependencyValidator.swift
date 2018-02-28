@@ -36,7 +36,7 @@ public class DependencyValidator {
 			
 			finalString = ""
 			for pClass in (classes)! {
-				let arrayDepend = self.recursiveDependCheckFor(pClass: pClass)
+				let arrayDepend = self.startRecursiveDependCheckFor(pClass: pClass)
 				// check if circleDependency detected
 				if arrayDepend.contains(pClass.name!) {
 					finalString.append(pClass.name! + ": " + circleDependString)
@@ -57,24 +57,28 @@ public class DependencyValidator {
 		return finalString
 	}
 	
-	func recursiveDependCheckFor(pClass: PseudoClass) -> Array<String> {
-		var stringArray = Array<String>()
+	func startRecursiveDependCheckFor(pClass: PseudoClass) -> Array<String> {
+		return recursiveDependCheckFor(pClass: pClass, throughputArray: Array<String>())
+	}
+	
+	func recursiveDependCheckFor(pClass: PseudoClass, throughputArray: Array<String>) -> Array<String> {
 		
+		var stringArray = Array<String>()
 		// run through every possible class
 		for maybeClass in pClass.dependencies! {
 			
 			// make sure we don't already have this class in the system
-			// FIXIT recursive break down, taking a break, will look at later
-			//if !stringArray.contains(maybeClass) {
+			if !throughputArray.contains(maybeClass) {
 				stringArray.append(maybeClass) // add current class to array
 				
 				// see if the current class is listed in our array of classes with depedencies
 				if let foundClass = findPClassWith(name: maybeClass) {
 					// call this class again with the found class
-					stringArray.append(contentsOf: recursiveDependCheckFor(pClass: foundClass))
+					let newThroughputArray = stringArray + throughputArray
+					stringArray.append(contentsOf: recursiveDependCheckFor(pClass: foundClass, throughputArray: newThroughputArray))
 					
 				}
-			//}
+			}
 			
 		}
 		// return messy array of all dependencies of originally called class

@@ -97,14 +97,12 @@ class DependencyValidatorTests: XCTestCase {
 		// E: FH
 		// F: H
 		
-		let validA = validator?.recursiveDependCheckFor(pClass: pClassA)
-		XCTAssertEqual(validA!, ["B", "C", "G", "E", "F", "H", "C", "G"])
-		let validB = validator?.recursiveDependCheckFor(pClass: pClassB)
-		XCTAssertNotEqual(validB!, ["P"])
-		let validC = validator?.recursiveDependCheckFor(pClass: pClassC)
-		let validD = validator?.recursiveDependCheckFor(pClass: pClassD)
-		let validE = validator?.recursiveDependCheckFor(pClass: pClassE)
-		let validF = validator?.recursiveDependCheckFor(pClass: pClassF)
+		let validA = validator?.startRecursiveDependCheckFor(pClass: pClassA)
+		let validB = validator?.startRecursiveDependCheckFor(pClass: pClassB)
+		let validC = validator?.startRecursiveDependCheckFor(pClass: pClassC)
+		let validD = validator?.startRecursiveDependCheckFor(pClass: pClassD)
+		let validE = validator?.startRecursiveDependCheckFor(pClass: pClassE)
+		let validF = validator?.startRecursiveDependCheckFor(pClass: pClassF)
 		
 		let cleanA = validator?.cleanUp(array: validA!)
 		XCTAssertEqual(cleanA, "BCEFGH")
@@ -149,19 +147,19 @@ class DependencyValidatorTests: XCTestCase {
 		XCTAssertEqual(final, check)
 	}
 	
-//	func testCircularDependencyCatch() {
-//		
-//		let pClassA = PseudoClass.init(name: "A", dependencies: ["B"])
-//		validator?.addClass(pClass: pClassA)
-//		let pClassB = PseudoClass.init(name: "B", dependencies: ["C"])
-//		validator?.addClass(pClass: pClassB)
-//		let pClassC = PseudoClass.init(name: "C", dependencies: ["A"])
-//		validator?.addClass(pClass: pClassC)
-//		
-//		let final = validator?.determineDependencies()
-//		let contain = final!.contains("Circular Dependency Found")
-//		
-//		XCTAssertTrue(contain)
-//	}
-    
+	func testCircularDependencyCatch() {
+		
+		let pClassA = PseudoClass.init(name: "A", dependencies: ["B"])
+		validator?.addClass(pClass: pClassA)
+		let pClassB = PseudoClass.init(name: "B", dependencies: ["C"])
+		validator?.addClass(pClass: pClassB)
+		let pClassC = PseudoClass.init(name: "C", dependencies: ["A"])
+		validator?.addClass(pClass: pClassC)
+		
+		let final = validator?.determineDependencies()
+		let contain = final!.contains("Circular Dependency Found")
+		
+		XCTAssertTrue(contain)
+	}
+	
 }
