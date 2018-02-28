@@ -13,6 +13,11 @@
 		7BF7392E20470CA1003CCC5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BF7392D20470CA1003CCC5F /* Assets.xcassets */; };
 		7BF7393120470CA1003CCC5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF7392F20470CA1003CCC5F /* LaunchScreen.storyboard */; };
 		7BF7393C20470CA1003CCC5F /* MangoDependenciesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF7393B20470CA1003CCC5F /* MangoDependenciesTests.swift */; };
+		7BF7394720470D08003CCC5F /* PseudoClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF7394620470D08003CCC5F /* PseudoClass.swift */; };
+		7BF7394920470E93003CCC5F /* DependencyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF7394820470E93003CCC5F /* DependencyValidator.swift */; };
+		7BF7394B2047219A003CCC5F /* DependencyValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF7394A2047219A003CCC5F /* DependencyValidatorTests.swift */; };
+		7BF7394C20472314003CCC5F /* DependencyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF7394820470E93003CCC5F /* DependencyValidator.swift */; };
+		7BF7394D20472318003CCC5F /* PseudoClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF7394620470D08003CCC5F /* PseudoClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,9 @@
 		7BF7393720470CA1003CCC5F /* MangoDependenciesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MangoDependenciesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF7393B20470CA1003CCC5F /* MangoDependenciesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangoDependenciesTests.swift; sourceTree = "<group>"; };
 		7BF7393D20470CA1003CCC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BF7394620470D08003CCC5F /* PseudoClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PseudoClass.swift; sourceTree = "<group>"; };
+		7BF7394820470E93003CCC5F /* DependencyValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyValidator.swift; sourceTree = "<group>"; };
+		7BF7394A2047219A003CCC5F /* DependencyValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,8 @@
 			children = (
 				7BF7392620470CA1003CCC5F /* AppDelegate.swift */,
 				7BF7392820470CA1003CCC5F /* ViewController.swift */,
+				7BF7394620470D08003CCC5F /* PseudoClass.swift */,
+				7BF7394820470E93003CCC5F /* DependencyValidator.swift */,
 				7BF7392A20470CA1003CCC5F /* Main.storyboard */,
 				7BF7392D20470CA1003CCC5F /* Assets.xcassets */,
 				7BF7392F20470CA1003CCC5F /* LaunchScreen.storyboard */,
@@ -90,6 +100,7 @@
 		7BF7393A20470CA1003CCC5F /* MangoDependenciesTests */ = {
 			isa = PBXGroup;
 			children = (
+				7BF7394A2047219A003CCC5F /* DependencyValidatorTests.swift */,
 				7BF7393B20470CA1003CCC5F /* MangoDependenciesTests.swift */,
 				7BF7393D20470CA1003CCC5F /* Info.plist */,
 			);
@@ -199,6 +210,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BF7394720470D08003CCC5F /* PseudoClass.swift in Sources */,
+				7BF7394920470E93003CCC5F /* DependencyValidator.swift in Sources */,
 				7BF7392920470CA1003CCC5F /* ViewController.swift in Sources */,
 				7BF7392720470CA1003CCC5F /* AppDelegate.swift in Sources */,
 			);
@@ -209,6 +222,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BF7393C20470CA1003CCC5F /* MangoDependenciesTests.swift in Sources */,
+				7BF7394B2047219A003CCC5F /* DependencyValidatorTests.swift in Sources */,
+				7BF7394D20472318003CCC5F /* PseudoClass.swift in Sources */,
+				7BF7394C20472314003CCC5F /* DependencyValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
